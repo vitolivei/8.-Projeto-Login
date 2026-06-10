@@ -1,0 +1,90 @@
+@charset "UTF-8"; /* Define a codificação do arquivo CSS para UTF-8, permitindo caracteres especiais como ç, á, ã etc. */
+
+/* Typical Device Breakpoints
+Pequenas telas: até 600px
+Celular: de 600px até 768px
+Tablet: 768px até 992px
+Desktop: 992px até 1200px
+Grandes telas: acima de 1200px
+*/
+/* Comentário informativo mostrando os tamanhos de tela usados como referência no projeto. */
+
+@media screen and (min-width: 768px) and (max-width: 992px) { /* Aplica os estilos apenas para telas entre 768px e 992px (tablets). */
+
+  body { /* Seleciona o corpo da página. */
+
+    background-image: linear-gradient(to top, #49a09d, #5f2c82);
+    /* Cria um fundo com gradiente.
+       "to top" = a cor começa embaixo (#49a09d) e termina em cima (#5f2c82). */
+  }
+
+  section#login { /* Seleciona a section com id="login". */
+
+    width: 80vw;
+    /* Define a largura como 80% da largura visível da janela (viewport width). */
+  }
+
+  section#login > div#imagem { /* Seleciona a div#imagem que é filha direta da section#login. */
+
+    float: left;
+    /* Posiciona o elemento à esquerda, permitindo que outros elementos fiquem ao lado dele. */
+
+    width: 30%;
+    /* A div ocupará 30% da largura do container pai. */
+
+    height: 100%;
+    /* Faz a altura ocupar 100% da altura disponível do elemento pai. */
+  }
+
+  section#login > div#formulario { /* Seleciona a div#formulario filha direta da section#login. */
+
+    float: hight;
+    /* ERRO:
+       "hight" não existe em CSS.
+       Provavelmente o correto seria:
+       float: right;
+       para posicionar o formulário à direita da imagem. */
+
+    width: 70%;
+    /* O formulário ocupará 70% da largura do container. */
+  }
+
+} /* Fim da media query para tablets. */
+
+
+@media screen and (min-width: 992px) { /* Aplica os estilos para telas com largura igual ou superior a 992px (desktop). */
+
+  body { /* Seleciona o corpo da página. */
+
+    background-image: linear-gradient(to top, #49a09d, #5f2c82);
+    /* Mantém o mesmo gradiente de fundo usado na versão tablet. */
+  }
+
+  section#login { /* Seleciona a section com id="login". */
+
+    width: 950px;
+    /* Define uma largura fixa de 950 pixels para a área de login. */
+  }
+
+  section#login > div#imagem { /* Seleciona a div da imagem. */
+
+    float: left;
+    /* Posiciona a imagem no lado esquerdo do container. */
+
+    width: 50%;
+    /* A imagem ocupa metade da largura da section. */
+
+    height: 100%;
+    /* A imagem ocupa toda a altura disponível do container. */
+  }
+
+  section#login > div#formulario { /* Seleciona a div do formulário. */
+
+    float: right;
+    /* Posiciona o formulário no lado direito da section. */
+
+    width: 50%;
+    /* O formulário ocupa a outra metade da largura. */
+  }
+
+} /* Fim da media query para desktop. */

@@ -32,12 +32,19 @@ section#login > div#formulario{
     width: 950px;
   }
 section#login > div#imagem{
-    float: left;
+    float: right;
     width: 50%;
     height: 100%;
 }
 section#login > div#formulario{
-    float: right;
+    float: left;
     width: 50%;
+}
+div#formulario> h1{
+    font-style: 2.3em;
+}
+div#formulario > p{
+    font-size: 1.6
+    em;
 }
 }
