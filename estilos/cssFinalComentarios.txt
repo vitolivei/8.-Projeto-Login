@@ -1,0 +1,412 @@
+<!-- ===================================================== -->
+<!-- PROJETO LOGIN RESPONSIVO - MOBILE FIRST -->
+<!-- CURSO EM VÍDEO - HTML5 E CSS3 -->
+<!-- ===================================================== -->
+
+<!DOCTYPE html>
+<!-- Define que o documento utiliza HTML5 -->
+
+<html lang="pt-br">
+<!-- Define o idioma principal da página -->
+
+<head>
+
+    <meta charset="UTF-8">
+    <!-- Permite utilizar acentos e caracteres especiais -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Faz o layout se adaptar a celulares, tablets e desktops -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Importa os ícones do Google -->
+
+    <link rel="stylesheet" href="estilos/style.css">
+    <!-- CSS principal (Mobile First) -->
+
+    <link rel="stylesheet" href="estilos/media-query.css">
+    <!-- CSS para Tablet e Desktop -->
+
+    <title>Login</title>
+    <!-- Título exibido na aba -->
+
+</head>
+
+<body>
+
+    <main>
+    <!-- Conteúdo principal da página -->
+
+        <section id="login">
+        <!-- Caixa principal do login -->
+
+            <div id="imagem">
+            <!-- Imagem de fundo definida no CSS -->
+            </div>
+
+            <div id="formulario">
+            <!-- Área do formulário -->
+
+                <h1>Login</h1>
+
+                <p>
+                    Seja bem-vindo(a) novamente.
+                    Faça seu login para acessar sua conta.
+                </p>
+
+                <form action="login.php" method="post" autocomplete="on">
+
+                    <div class="campo">
+
+                        <span class="material-icons">person</span>
+                        <!-- Ícone de usuário -->
+
+                        <input
+                            type="email"
+                            name="login"
+                            id="ilogin"
+                            placeholder="seu e-mail"
+                            autocomplete="email"
+                            required
+                            maxlength="30">
+
+                        <label for="ilogin">
+                            Login
+                        </label>
+
+                    </div>
+
+                    <div class="campo">
+
+                        <span class="material-icons">key</span>
+                        <!-- Ícone de senha -->
+
+                        <input
+                            type="password"
+                            name="senha"
+                            id="isenha"
+                            placeholder="sua senha"
+                            autocomplete="current-password"
+                            required
+                            minlength="8"
+                            maxlength="20">
+
+                        <label for="isenha">
+                            Senha
+                        </label>
+
+                    </div>
+
+                    <input type="submit" value="Entrar">
+                    <!-- Botão de envio -->
+
+                    <a href="esqueci.html" class="botao">
+                        Esqueci a senha
+                        <span class="material-icons">mail</span>
+                    </a>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
+
+
+
+/* ===================================================== */
+/* CSS MOBILE FIRST */
+/* ===================================================== */
+
+@charset "UTF-8";
+
+/* Remove margens e padding padrão */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Ocupa toda a tela */
+html, body{
+    width:100vw;
+    height:100vh;
+
+    background:#5f2c82;
+}
+
+/* Área principal */
+main{
+    position:relative;
+
+    width:100vw;
+    height:100vh;
+}
+
+/* Caixa de login */
+section#login{
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+    /* Centraliza horizontalmente e verticalmente */
+
+    width:320px;
+    height:610px;
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+    /* Impede que a imagem ultrapasse os cantos arredondados */
+
+    box-shadow:0 0 10px rgba(0,0,0,.4);
+}
+
+/* Área da imagem */
+section#login > div#imagem{
+
+    display:block;
+
+    height:270px;
+
+    background:
+    #5f2c82
+    url(../imagens/pexels-caique-araujo-101156227-15705997.jpg)
+    no-repeat;
+
+    background-size:cover;
+    /* Faz a imagem preencher toda a área */
+
+    background-position:top right;
+}
+
+/* Área do formulário */
+section#login > div#formulario{
+    padding:10px;
+}
+
+/* Título */
+div#formulario > h1{
+
+    text-align:center;
+
+    margin-bottom:10px;
+}
+
+/* Texto */
+div#formulario > p{
+
+    font-size:.8em;
+
+    text-align:justify;
+}
+
+/* Campo completo */
+form > div.campo{
+
+    width:100%;
+    height:40px;
+
+    margin:5px 0;
+
+    background:#5f2c82;
+
+    border:2px solid #5f2c82;
+
+    border-radius:5px;
+}
+
+/* Esconde o label visualmente */
+div.campo > label{
+    display:none;
+}
+
+/* Ícone */
+div.campo > span{
+
+    display:inline-block;
+
+    width:40px;
+
+    height:100%;
+
+    padding:4px;
+
+    color:white;
+
+    font-size:2em;
+}
+
+/* Campo de texto */
+div.campo > input{
+
+    width:calc(100% - 45px);
+    /* 100% menos o espaço ocupado pelo ícone */
+
+    height:100%;
+
+    padding:4px;
+
+    border:none;
+
+    border-radius:6px;
+
+    background:#94cfcd;
+
+    font-size:1em;
+
+    transform:translateY(-11px);
+    /* Ajusta alinhamento vertical */
+}
+
+/* Campo ativo */
+div.campo > input:focus{
+
+    background:white;
+}
+
+/* Botão Entrar */
+form > input[type=submit]{
+
+    width:100%;
+    height:40px;
+
+    border:none;
+
+    border-radius:5px;
+
+    background:#49a09d;
+
+    color:white;
+
+    cursor:pointer;
+}
+
+/* Hover do botão */
+form > input[type=submit]:hover{
+
+    background:#19413f;
+}
+
+/* Botão Esqueci a senha */
+form > a.botao{
+
+    display:block;
+
+    width:100%;
+    height:40px;
+
+    margin-top:5px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    border:1px solid #49a09d;
+
+    border-radius:5px;
+
+    color:#2d6462;
+
+    background:white;
+}
+
+/* Hover do link */
+form > a.botao:hover{
+
+    background:#6cd3cf;
+}
+
+
+
+/* ===================================================== */
+/* TABLET */
+/* ===================================================== */
+
+@media screen and (min-width:768px) and (max-width:992px){
+
+    body{
+
+        background-image:
+        linear-gradient(to top,#49a09d,#5f2c82);
+    }
+
+    section#login{
+
+        width:80vw;
+        height:350px;
+    }
+
+    section#login > div#imagem{
+
+        float:left;
+
+        width:30%;
+        height:100%;
+    }
+
+    section#login > div#formulario{
+
+        float:right;
+
+        width:70%;
+    }
+}
+
+
+
+/* ===================================================== */
+/* DESKTOP */
+/* ===================================================== */
+
+@media screen and (min-width:992px){
+
+    body{
+
+        background-image:
+        linear-gradient(to top,#49a09d,#5f2c82);
+    }
+
+    section#login{
+
+        width:950px;
+        height:400px;
+    }
+
+    section#login > div#imagem{
+
+        float:right;
+
+        width:50%;
+        height:100%;
+    }
+
+    section#login > div#formulario{
+
+        float:left;
+
+        width:50%;
+    }
+
+    div#formulario > h1{
+
+        font-size:2.3em;
+        /* Título maior no desktop */
+    }
+
+    div#formulario > p{
+
+        font-size:1.3em;
+
+        margin:20px 0;
+    }
+}

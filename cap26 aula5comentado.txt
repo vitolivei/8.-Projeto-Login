@@ -1,0 +1,287 @@
+cap26 aula5
+
+index
+
+```html
+<!doctype html> <!-- Define que o documento usa HTML5 -->
+
+<html lang="pt-br"> <!-- Define o idioma da página -->
+
+<head> <!-- Início do cabeçalho -->
+
+<meta charset="UTF-8"> <!-- Permite acentos e caracteres especiais -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Faz a página se adaptar ao tamanho da tela -->
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- Importa os ícones do Google -->
+
+<link rel="stylesheet" href="estilos/style.css">
+<!-- Conecta o arquivo style.css -->
+
+<link rel="stylesheet" href="estilos/media-query.css">
+<!-- Conecta o arquivo media-query.css -->
+
+<title>Login</title> <!-- Título exibido na aba -->
+
+</head> <!-- Fim do cabeçalho -->
+
+<body> <!-- Início do corpo da página -->
+
+<main> <!-- Conteúdo principal -->
+
+<section id="login"> <!-- Área principal do login -->
+
+<div id="imagem"> <!-- Div destinada à imagem -->
+
+<!-- aqui vai imagem nas css --> <!-- Comentário do desenvolvedor -->
+
+</div> <!-- Fecha a div imagem -->
+
+<div id="formulario"> <!-- Área do formulário -->
+
+<h1>Login</h1> <!-- Título principal -->
+
+<p> <!-- Início do parágrafo -->
+
+Seja bem-vindo(a) novamente.
+<!-- Texto de boas-vindas -->
+
+Faça seu login para acessar sua conta
+<!-- Explicação para o usuário -->
+
+e poder fazer as configurações no seu ambiente
+<!-- Complemento da mensagem -->
+
+</p> <!-- Fecha o parágrafo -->
+
+<form action="login.php" method="post" autocomplete="on">
+<!-- Envia os dados para login.php usando POST -->
+
+<div class="campo"> <!-- Grupo do campo login -->
+
+<span class="material-icons">person</span>
+<!-- Exibe o ícone de usuário -->
+
+<input
+type="email" <!-- Campo específico para e-mail -->
+name="login" <!-- Nome enviado para o PHP -->
+id="ilogin" <!-- Identificador único -->
+placeholder="seu e-mail" <!-- Texto de exemplo -->
+autocomplete="email" <!-- Sugere e-mail salvo -->
+required <!-- Campo obrigatório -->
+maxlength="30"> <!-- Máximo de 30 caracteres -->
+
+<label for="ilogin">Login</label>
+<!-- Texto associado ao campo -->
+
+</div> <!-- Fecha grupo login -->
+
+<div class="campo"> <!-- Grupo do campo senha -->
+
+<span class="material-icons">key</span>
+<!-- Exibe o ícone de chave -->
+
+<input
+type="password" <!-- Campo que oculta caracteres -->
+name="senha" <!-- Nome enviado para o PHP -->
+id="isenha" <!-- Identificador do campo -->
+placeholder="sua senha" <!-- Texto de exemplo -->
+autocomplete="current-password"
+<!-- Sugere senha salva -->
+required
+<!-- Campo obrigatório -->
+minlength="8"
+<!-- Mínimo de 8 caracteres -->
+maxlength="20">
+<!-- Máximo de 20 caracteres -->
+
+<label for="isenha">Senha</label>
+<!-- Texto associado ao campo senha -->
+
+</div> <!-- Fecha grupo senha -->
+
+<input type="submit" value="Entrar">
+<!-- Botão que envia o formulário -->
+
+<a href="esqueci.html">
+<!-- Link para recuperação de senha -->
+
+Esqueci a senha
+<!-- Texto do link -->
+
+<span class="material-icons">mail</span>
+<!-- Ícone de e-mail -->
+
+</a> <!-- Fecha link -->
+
+</form> <!-- Fecha formulário -->
+
+</div> <!-- Fecha div formulário -->
+
+</section> <!-- Fecha section login -->
+
+</main> <!-- Fecha conteúdo principal -->
+
+</body> <!-- Fecha corpo -->
+
+</html> <!-- Fecha documento HTML -->
+
+
+```
+css
+
+
+```css
+@charset "UTF-8";
+/* Permite utilizar caracteres especiais */
+
+@media screen and (min-width: 768px) and (max-width: 992px)
+/* Aplica estas regras apenas em tablets */
+{
+
+    body /* Corpo da página */
+    {
+        background-image: linear-gradient(to top,#49a09d,#5f2c82);
+        /* Cria um fundo em degradê */
+    }
+
+    section#login
+    /* Seleciona a section com id login */
+    {
+        width: 80vw;
+        /* Define largura de 80% da tela */
+    }
+
+    section#login > div#imagem
+    /* Seleciona a div imagem dentro de login */
+    {
+        float: left;
+        /* Posiciona a imagem à esquerda */
+
+        width: 30%;
+        /* Ocupa 30% da largura */
+
+        height: 100%;
+        /* Ocupa toda a altura disponível */
+    }
+
+    section#login > div#formulario
+    /* Seleciona a div formulário */
+    {
+        float: hight;
+        /* ERRO: provavelmente deveria ser right */
+
+        width: 70%;
+        /* Ocupa 70% da largura */
+    }
+
+} /* Fim das regras para tablet */
+
+
+
+@media screen and (min-width: 992px)
+/* Aplica estas regras em desktops */
+{
+
+    body
+    /* Corpo da página */
+    {
+        background-image: linear-gradient(to top,#49a09d,#5f2c82);
+        /* Fundo degradê */
+    }
+
+    section#login
+    /* Caixa principal do login */
+    {
+        width: 950px;
+        /* Largura fixa de 950px */
+    }
+
+    section#login > div#imagem
+    /* Área da imagem */
+    {
+        float: right;
+        /* Coloca a imagem à direita */
+
+        width: 50%;
+        /* Metade da largura */
+
+        height: 100%;
+        /* Altura total */
+    }
+
+    section#login > div#formulario
+    /* Área do formulário */
+    {
+        float: left;
+        /* Coloca o formulário à esquerda */
+
+        width: 50%;
+        /* Metade da largura */
+    }
+
+    div#formulario > h1
+    /* Título do formulário */
+    {
+        font-style: 2.3em;
+        /* ERRO: deveria ser font-size */
+    }
+
+    div#formulario > p
+    /* Parágrafo do formulário */
+    {
+        font-size: 1.6 em;
+        /* ERRO: deve ser 1.6em sem espaço */
+    }
+
+} /* Fim das regras desktop */
+```
+
+### Como ler os seletores
+
+```css
+body
+```
+
+→ Seleciona o corpo inteiro da página.
+
+```css
+section#login
+```
+
+→ Seleciona a `<section>` que possui `id="login"`.
+
+```css
+div#imagem
+```
+
+→ Seleciona a `<div>` que possui `id="imagem"`.
+
+```css
+div#formulario
+```
+
+→ Seleciona a `<div>` que possui `id="formulario"`.
+
+```css
+section#login > div#imagem
+```
+
+→ Seleciona apenas a div imagem que é filha direta da section login.
+
+```css
+div#formulario > h1
+```
+
+→ Seleciona o título `<h1>` que está dentro do formulário.
+
+```css
+div#formulario > p
+```
+
+→ Seleciona o parágrafo que está dentro do formulário.
+
+```
+```

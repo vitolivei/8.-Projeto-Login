@@ -5,12 +5,13 @@ Celular: de 600px até 768px
 Tablet: 768px até 992px
 Desktop: 992px até 1200px
 Grandes telas: acima de 1200px*/
-@media screen and (min-width: 768px) and (max-width: 992px){
+@media screen and (min-width: 768px) and (max-width: 992px){/* configuração para tablet */
   body{
     background-image: linear-gradient(to top,#49a09d,#5f2c82);
   }
 section#login{
     width: 80vw;
+    height: 350px;
 }
 section#login > div#imagem{
     float: left;
@@ -18,18 +19,19 @@ section#login > div#imagem{
     height: 100%;
 }
 section#login > div#formulario{
-    float: hight;
+    float: right;
     width: 70%;
    
 }
 
 }
 @media screen and (min-width: 992px ){
-  body{
+  body{/* configuração para desktop */
      background-image: linear-gradient(to top,#49a09d,#5f2c82);
   }
     section#login{
     width: 950px;
+    height: 400px;
   }
 section#login > div#imagem{
     float: right;
@@ -44,7 +46,7 @@ div#formulario> h1{
     font-style: 2.3em;
 }
 div#formulario > p{
-    font-size: 1.6
-    em;
+    font-size: 1.3em;
+    margin: 20px 0px;
 }
 }
